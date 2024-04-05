@@ -1,0 +1,116 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Security.AccessControl;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Collections;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+
+namespace StudentRegistrationApplication
+{
+    public partial class Form1 : Form
+    {
+        String gender;
+        ArrayList program;
+
+        public Form1()
+        {
+            InitializeComponent();
+            for (int NumOfDays = 1; NumOfDays <= 31; NumOfDays++)
+            {
+                comboBox1.Items.Add(NumOfDays.ToString());
+
+            }
+            for (int NumOfYear = 1900; NumOfYear <= 2024; NumOfYear++)
+            {
+                comboBox3.Items.Add(NumOfYear.ToString());
+            }
+            //Month Updated
+            String[] Months = { "January", "Febuary", "March", "April", "May", "June", "July", "August",
+                    "September", "October", "November", "December" };
+            foreach (string MonthName in Months)
+            {
+                comboBox2.Items.Add(MonthName);
+
+            }
+            //programs
+            var Programs = new ArrayList()
+            {
+                "BATCHELO OF SCIENCE IN INFORMATION TECHNOLOGY", "BATCHELOR OF SCIENCE IN COMPUTER ENGINEERING", "BATCHELOR OF SCIENCE IN INFORMATION SYSTEM", "BATHCELOR OF SCIENCE IN COMPUTER SYSTEM"
+            };
+            comboBox4.Items.AddRange(Programs.ToArray());
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            string LastName = this.textBox1.Text;
+            string FirstName = this.textBox2.Text;
+            string MiddleName = this.textBox3.Text;
+
+            MessageBox.Show("Student Name: " + FirstName + " " + MiddleName + " " + LastName +
+                "\nGender: " + gender +
+                "\nDate: " + comboBox1.Text + '/' + comboBox2.Text + '/' + comboBox3.Text +
+                "\nProgram: " + comboBox4.Text);
+
+
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            gender = "Male";
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            gender = "Female";
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+    }
+}
